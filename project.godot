@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="VTT"
+run/main_scene="uid://b63pdnf4iknfh"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [file_customization]
 
 folder_colors={
-"res://Scenes/": "orange"
+"res://Scenes/": "orange",
+"res://Scripts/": "purple"
 }
 
 [rendering]

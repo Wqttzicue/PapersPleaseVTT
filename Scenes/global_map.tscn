@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63pdnf4iknfh"]
+
+[ext_resource type="Script" uid="uid://dsh5iv4wp11mx" path="res://Scripts/editing_tools.gd" id="1_pwp18"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_pwp18")
