@@ -1,5 +1,5 @@
-class_name DrawData
+class_name PathData
 #Class Variables
-@export var colored_points : Array[Vector2]
+@export var points : Array[Vector2]
 @export var color := Color.RED
-@export var width := 100.0
+@export var width := 5.0
