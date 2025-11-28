@@ -14,11 +14,14 @@ config/name="VTT"
 run/main_scene="uid://b63pdnf4iknfh"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[display]
+
+window/subwindows/embed_subwindows=false
+
 [file_customization]
 
 folder_colors={
-"res://Scenes/": "orange",
-"res://Scripts/": "purple"
+"res://MainGameScenes/GlobalMapScene/": "purple"
 }
 
 [rendering]

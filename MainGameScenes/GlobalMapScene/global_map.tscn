@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b63pdnf4iknfh"]
+
+[ext_resource type="Script" uid="uid://dsh5iv4wp11mx" path="res://MainGameScenes/GlobalMapScene/editing_tools.gd" id="1_wwi3a"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wwi3a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
