@@ -1,5 +1,5 @@
 class_name PathData
 #Class Static Variables
 var points : Array[Vector2]
-static var color := Color.GREEN
-static var width := 5.0
+var color : Color = Color.BLACK
+var width : float = 10.0

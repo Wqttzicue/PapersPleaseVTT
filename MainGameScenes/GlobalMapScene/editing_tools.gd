@@ -1,6 +1,6 @@
-extends Node2D
+extends Control
 
-var color_picker = load("res://MainGameScenes/GlobalMapScene/ColorPickerMenu/color_picker_menu.tscn").instantiate()
+@onready var color_picker = %ColorPicker
 
 # ARRAY OF ARRAYS \/
 var paths : Array[PathData]
@@ -14,13 +14,17 @@ func draw(path : PathData):
 func _input(event : InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
+			#Appending new point to class
 			current_path = PathData.new()
 			current_path.points.append(event.position)
+			current_path.color = current_color
+			current_path.width = current_width
+			
 			var color_picker_rect = color_picker.get_global_rect()
-			if color_picker_rect.has_point(event.position):
+			if color_picker_rect.has_point(event.position) and color_picker.visible == true:
 				return
 			else:
-				remove_child(color_picker)
+				color_picker.set_visible(false)
 			
 		else:
 			if current_path.points.size() > 1:
@@ -31,7 +35,7 @@ func _input(event : InputEvent):
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.is_pressed():
-			add_child(color_picker)
+			color_picker.set_visible(true)
 		color_picker.get_parent()
 	
 	if is_mouse_pressed and event is InputEventMouseMotion:
@@ -44,3 +48,11 @@ func _draw():
 		
 	if current_path:
 		draw(current_path)
+
+# Assigning PathData class proper color_pickers n' width_sliders' values
+var current_color: Color = Color.BLACK
+var current_width: float = 0
+func _on_color_picker_color_changed(color: Color):
+	current_color = color
+func _on_h_slider_value_changed(width: float) -> void:
+	current_width = width
