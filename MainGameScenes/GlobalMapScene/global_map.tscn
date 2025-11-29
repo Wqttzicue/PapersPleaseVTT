@@ -13,16 +13,16 @@ script = ExtResource("1_wwi3a")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="ColorPicker" type="Panel" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-offset_left = 1665.0
-offset_top = 23.000002
-offset_right = 1966.0
-offset_bottom = 697.13806
+layout_mode = 0
+offset_left = 1468.0001
+offset_top = 173.0
+offset_right = 1769.0001
+offset_bottom = 847.13806
 scale = Vector2(0.58, 0.58)
 
 [node name="ColorPicker" type="ColorPicker" parent="ColorPicker"]
@@ -39,9 +39,9 @@ offset_left = 20.689657
 offset_top = 644.8276
 offset_right = 277.58615
 offset_bottom = 660.8276
-min_value = 0.5
+min_value = 5.0
 max_value = 200.0
-value = 0.5
+value = 5.0
 
 [node name="Label" type="Label" parent="ColorPicker/HSlider"]
 layout_mode = 0
@@ -51,5 +51,21 @@ offset_right = 31.482756
 offset_bottom = -4.586157
 text = "Width"
 
+[node name="Debug" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 90.0
+offset_bottom = 65.0
+
+[node name="Button" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 80.0
+offset_bottom = 54.0
+text = "Clear"
+
 [connection signal="color_changed" from="ColorPicker/ColorPicker" to="." method="_on_color_picker_color_changed"]
 [connection signal="value_changed" from="ColorPicker/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Debug/Button" to="." method="_on_button_pressed"]

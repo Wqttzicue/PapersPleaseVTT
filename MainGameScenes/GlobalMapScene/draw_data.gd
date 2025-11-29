@@ -3,3 +3,4 @@ class_name PathData
 var points : Array[Vector2]
 var color : Color = Color.BLACK
 var width : float = 10.0
+var smoothed_points: Array[Vector2] = []
